@@ -1,0 +1,72 @@
+#['airplane','bicycle','bird','boat','bottle','bus','car','cat','chair','cow','diningtable',
+#                    'dog','horse','motorbike','person','pottedplant','sheep','sofa','train','tvmonitor']
+#["car","cat","chair","horse"]
+#base options
+mode: "binary"
+arch: "res50"                                  #architecture for binary classification
+dataroot: "/opt/data/private/limanyi/DeepfakeDetection_reimplement/CNNDetection/dataset/" #path to images (should have subfolders trainA, trainB, valA, valB, etc)
+classes: ["chair","horse"]                     #image classes to train on
+class_bal: True
+batch_size: 32                                #input batch size
+loadSize: 256                                  #scale images to this size
+cropSize: 224                                  #then crop to this size
+device_ids: [0,1]                             #gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU
+name: "2class-NoCmp"                         #name of the experiment. It decides where to store samples and models
+num_threads: 16                                #threads for loading data
+checkpoints_dir: "./checkpoints/"                #models are saved here
+serial_batches: True                           #if true, takes images in order to make batches, otherwise takes them randomly
+resize_or_crop: "scale_and_crop"               #scaling and cropping of images at load time [resize_and_crop|crop|scale_width|scale_width_and_crop|none]
+no_flip: True                                  #if specified, do not flip the images for data augmentation
+init_type: "normal"                            #network initialization [normal|xavier|kaiming|orthogonal]
+init_gain: 0.02                                #scaling factor for normal, xavier and orthogonal
+suffix: ""                                     #customized suffix: opt.name = opt.name + suffix: e.g., {model}_{netG}_size{loadSize}
+
+#for data augmentation
+rz_interp: ["bilinear"]
+blur_prob: 0.5
+blur_sig: [0,3]
+jpg_prob: 0.2
+jpg_method: ["cv2"]
+jpg_qual: [30,100]
+
+
+#test options
+model_path: ""
+no_resize: True
+no_crop: False
+eval: True                                    #use eval mode during test time
+
+#train options
+isTrain: True
+epoch: 20                                
+earlystop_epoch: 3
+data_aug: True                                #if specified, perform additional data augmentation (photometric, blurring, jpegging)
+optim: "adam"                                 #optim to use [sgd, adam]
+new_optim: True                               #new optimizer instead of loading the optim state
+loss_freq: 400                                #frequency of showing loss on tensorboard
+save_latest_freq: 2000                        #frequency of saving the latest results
+save_epoch_freq: 20                           #frequency of saving checkpoints at the end of epochs
+continue_train: False                         #continue training: load the latest model
+continue_epoch: -1                             #the starting epoch count, we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>, ...
+load_path: "/opt/data/private/limanyi/journal2025/ours/checkpoints/Test/model_epoch_latest.pth"                                 #continue trainning, model Path
+train_split: "train/NoCmp"                          #train, val, test, etc
+val_split: "val/StaticCmp"                              #train, val, test, etc
+beta1: 0.9                                    #momentum term of adam
+
+lr: 0.0002                                    #initial learning rate for adam
+weight_decay: 0.0001                            
+momentum: 0.9
+adv_warmup: 0
+delr_freq: 10
+
+#ODDN config
+alpha: 1.0
+adv_warmup: 3
+warming_up: 3
+max_grad_norm: 1.0
+gamma: 0.004
+
+#experiment setting
+agnostic: True        # test
+mode: "50%RandomCmp"  # train
+
