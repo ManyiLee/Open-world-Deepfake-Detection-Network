@@ -37,6 +37,36 @@ Detailed information about the datasets used in DeepfakeBench is summarized belo
 | 9GANs | Test | [Hyper-link](https://github.com/chuangchuangtan/GANGen-Detection) |
 
 
+Upon downloading the datasets, please ensure to store them in the [`./datasets`](./datasets/) folder, arranging them in accordance with the directory structure outlined below:
+
+```
+datasets
+├── train
+|   ├── NoCcmp
+|   |   ├── airplane
+|   |   ├── bicycel
+|   |   ├── ......
+|   ├── 20%StaticCmp
+|   ├── ......
+|   ├── other Ratio
+├── test
+|   ├── AttGAN
+|   |   ├── NoCmp
+|   │   │   ├──0_real
+|   │   │   ├──1_fake
+|   |   ├── RandomCmp
+|   |   ├── StactioCmp
+|   ├── BEGAN
+|   ├── ......
+├── val
+|   ├── Nocmp
+|   |   ├── airplane
+|   |   ├── bicycle
+|   |   ├── ......
+|   ├── RandomCmp
+|   ├── StaticCmp
+```
+
 ### 3. Preprocessing
 You can run the following script to preprocess images as our experimental setting:
 
