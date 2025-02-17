@@ -36,7 +36,22 @@ Detailed information about the datasets used in DeepfakeBench is summarized belo
 | 8GANs | Test | [Hyper-link](https://github.com/PeterWang512/CNNDetection) |
 | 9GANs | Test | [Hyper-link](https://github.com/chuangchuangtan/GANGen-Detection) |
 
-### 3. Training
+
+### 3. Preprocessing
+You can run the following script to preprocess images as our experimental setting:
+
+```
+python preprocess/random_compression.py -r 0.2 -d 9Gans -m RandomCmp -up 100 -down 30 -m test
+python preprocess/random_compression.py -r 0.2 -d 8Gans -m RandomCmp -up 100 -down 30 -m test
+python preprocess/random_compression.py -r 0.2 -d 9Gans -m StaticCmp -up 50 -down 50 -m test
+python preprocess/random_compression.py -r 0.2 -d 8Gans -m StaticCmp -up 50 -down 50 -m test
+python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -m train
+python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 50 -down 50 -m test
+python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -m train
+python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 50 -down 50 -m test
+```
+And if you want to try other comfigurations, please adjust the arguments.
+### 4. Training
 
 <a href="#top">[Back to top]</a>
 
@@ -46,7 +61,7 @@ python train.py
 
 You can also adjust the training and testing argument by modifying the config file. By default, the checkpoints and features will be saved during the training process. 
 
-### 4. Evaluation
+### 5. Evaluation
 If you only want to evaluate the detector to produce the results of the cross-dataset evaluation. Here is an example:
 
 ```
