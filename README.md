@@ -100,6 +100,7 @@ If you only want to evaluate the detector to produce the results of the cross-da
 python eval_test_mygen9GANs.py
 python eval_test8gan.py
 ```
+Regarding the reproduction of the experiment results, kindly download the [checkpoints](https://pan.baidu.com/s/1GgKy6fFxjfJnVEhnjC8YoQ?pwd=qvui). The filename encapsulates four types of information: the number of image classes used in training, the percentage of data created as paired data and utilized in training, and the compression types employed during both the training and testing phases. For instance, "4class-20%Agnostic" indicates four classes of images, with 20% of the data being paired and used in training, and the use of a specific compression type labeled as "Agnostic" during both phases.
 
 ## 📝 Citation
 
