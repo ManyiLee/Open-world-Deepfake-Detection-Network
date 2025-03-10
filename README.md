@@ -6,6 +6,8 @@
 >  ❗️❗️❗️ **News:**
 > 
 > ✨:1. **Accepted by AAAI 2025 (Oral)**: Our research paper has been accepted by AAAI2025 and chosen as oral presentaion. And latest paper is released at https://arxiv.org/abs/2410.18687. We presents a novel approach designed to address the challenges of deepfake detection in open-world scenarios, particularly on online social networks where unpaired data is prevalent.
+>
+> 🔥:2. We have released pre-trained weights, you can use them for evaluation!
 
 
 ## ⏳ Quick Start
