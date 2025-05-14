@@ -73,12 +73,10 @@ datasets
 You can run the following script to preprocess images as our experimental setting:
 
 ```
-python preprocess/random_compression.py -r 0.2 -d 9Gans -m RandomCmp -up 100 -down 30 -m test
-python preprocess/random_compression.py -r 0.2 -d 8Gans -m RandomCmp -up 100 -down 30 -m test
-python preprocess/random_compression.py -r 0.2 -d 9Gans -m StaticCmp -up 50 -down 50 -m test
-python preprocess/random_compression.py -r 0.2 -d 8Gans -m StaticCmp -up 50 -down 50 -m test
-python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -m train
-python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 50 -down 50 -m test
+python preprocess/random_compression.py -r 1.0 -d 9Gans -m RandomCmp -up 100 -down 30 -m test
+python preprocess/random_compression.py -r 1.0 -d 8Gans -m RandomCmp -up 100 -down 30 -m test
+python preprocess/random_compression.py -r 1.0 -d 9Gans -m StaticCmp -up 50 -down 50 -m test
+python preprocess/random_compression.py -r 1.0 -d 8Gans -m StaticCmp -up 50 -down 50 -m test
 python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -m train
 python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 50 -down 50 -m test
 ```
