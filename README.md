@@ -80,25 +80,24 @@ python preprocess/random_compression.py -r 1.0 -d 8Gans -m StaticCmp -up 60 -dow
 python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -t train
 python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 60 -down 60 -t test
 ```
-And if you want to try other comfigurations, please adjust the arguments.
+And if you want to try other comfigurations, please adjust the arguments. We also provide [download links]([https://github.com/PeterWang512/CNNDetection](https://pan.baidu.com/s/10LQW5M4rNmwoCfFg_z1LZQ?pwd=xvqn)) for the preprocessed data used in experiments. Here is a serial of command to download this datasets on you server device fastly.
+
+```
+pip install bypy
+bypy info 
+sudo apt-get install aria2
+bypy --downloader aria2 download remote_path local_path
+bypy --downloader aria2 downdir remote_path local_path
+```
 ### 4. Training
 
 <a href="#top">[Back to top]</a>
 
 ```
-python train.py
+python train.py -g 0,1
 ```
 
-You can also adjust the training and testing argument by modifying the config file. By default, the checkpoints and features will be saved during the training process. 
-
-### 5. Evaluation
-If you only want to evaluate the detector to produce the results of the cross-dataset evaluation. Here is an example:
-
-```
-python eval_test_mygen9GANs.py
-python eval_test8gan.py
-```
-Regarding the reproduction of the experiment results, kindly download the [checkpoints](https://pan.baidu.com/s/1GgKy6fFxjfJnVEhnjC8YoQ?pwd=qvui). The filename encapsulates four types of information: the number of image classes used in training, the percentage of data created as paired data and utilized in training, and the compression types employed during both the training and testing phases. For instance, "4class-20%Agnostic" indicates four classes of images, with 20% of the data being paired and used in training, and the use of a specific compression type labeled as "Agnostic" during both phases.
+You can also adjust the training and testing argument by modifying the config file. By default, the checkpoints and features will be saved during the training process. Regarding the reproduction of the experiment results, kindly download the [checkpoints](https://pan.baidu.com/s/1GgKy6fFxjfJnVEhnjC8YoQ?pwd=qvui). The filename encapsulates four types of information: the number of image classes used in training, the percentage of data created as paired data and utilized in training, and the compression types employed during both the training and testing phases. For instance, "4class-20%Agnostic" indicates four classes of images, with 20% of the data being paired and used in training, and the use of a specific compression type labeled as "Agnostic" during both phases.
 
 ## 📝 Citation
 
