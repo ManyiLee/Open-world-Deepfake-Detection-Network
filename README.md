@@ -80,7 +80,7 @@ python preprocess/random_compression.py -r 1.0 -d 8Gans -m StaticCmp -up 60 -dow
 python preprocess/random_compression.py -r 0.2 -d ProGan -m RandomCmp -up 100 -down 30 -t train
 python preprocess/random_compression.py -r 0.2 -d ProGan -m StaticCmp -up 60 -down 60 -t test
 ```
-And if you want to try other comfigurations, please adjust the arguments. We also provide [download links]([https://github.com/PeterWang512/CNNDetection](https://pan.baidu.com/s/10LQW5M4rNmwoCfFg_z1LZQ?pwd=xvqn)) for the preprocessed data used in experiments. Here is a serial of command to download this datasets on you server device fastly.
+And if you want to try other comfigurations, please adjust the arguments. We also provide [download links](https://pan.baidu.com/s/10LQW5M4rNmwoCfFg_z1LZQ?pwd=xvqn) for the preprocessed data used in experiments. Here is a serial of command to download this datasets on you server device fastly.
 
 ```
 pip install bypy
