@@ -3,5 +3,13 @@ scikit-learn
 numpy
 opencv_python
 Pillow
-torch
+torch>=1.2.0
 torchvision
+pyyaml
+tqdm
+tensorboardX
+ftfy
+regex
+einops
+timm
+thop
