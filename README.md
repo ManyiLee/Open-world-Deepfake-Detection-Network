@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ⭐️ **Datasets** (17 widely used datasets):InfoGAN、BEGAN、CramGAN、AttGAN、MMDGAN、RelGAN、S3GAN、SNGGAN、STGGAN、ProGAN、StyleGAN、StyleGAN2、BigGAN、CycleGAN、StarGAN、GuaGAN、Deepfake
 
-Detailed information about the datasets used in DeepfakeBench is summarized below:
+Detailed information about the datasets used in ODDN is summarized below:
 
 | Dataset | Function | Original Repository |
 | --- | --- | --- |
